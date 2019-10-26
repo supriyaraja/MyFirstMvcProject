@@ -1,10 +1,14 @@
-﻿@model MvcProject.Models.Employee
+﻿@model List<MvcProject.Models.Employee>
 @{
     ViewBag.Title = "GetEmployee";
 }
 
 <h2>GetEmployee</h2>
-@Model.EmpID<span>-</span>
-@Model.EmpName<span>-</span>
-@Model.EmpSalary</br>
+
+@foreach (var item in Model)
+{
+    @item.EmpID<span>_</span>
+    @item.EmpName<span>_</span>
+    @item.EmpSalary<br/>
+}
 
