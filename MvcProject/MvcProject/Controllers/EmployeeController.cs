@@ -34,6 +34,8 @@ namespace MvcProject.Controllers
             dbobj.Add(db1);
             dbobj.Add(db2);
 
+            ViewBag.EmpDetails = dbobj;
+
             return View(dbobj);
         }
     }
