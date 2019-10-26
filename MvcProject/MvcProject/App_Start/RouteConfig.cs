@@ -11,7 +11,13 @@ namespace MvcProject
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
-            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+           // routes.IgnoreRoute("Default/GetName");
+
+            routes.MapRoute(
+                name: "Default2",
+                url: "{controller}/{action}/{EmpId}/{Ename}/{Salary}",
+                defaults: new { controller = "default", action = "Index", EmpId = UrlParameter.Optional, Ename = UrlParameter.Optional, Salary = UrlParameter.Optional }
+            );
 
             routes.MapRoute(
                 name: "Default1",

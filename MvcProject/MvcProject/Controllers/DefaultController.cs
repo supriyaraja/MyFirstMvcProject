@@ -14,14 +14,34 @@ namespace MvcProject.Controllers
         {
             return View();
         }
+        //send empid through viewbag
         public ActionResult GetEmployee(int? EmpId)
         {
             ViewBag.EmpInfo = EmpId;
             return View();
         }
-        //public string GetEmployeeusingEmpID(int EmpId, string EmpName, int EmpSalary)
-        //{
-        //    return "Employee ID : " + EmpId + " Employee Name : " + EmpName + " Employee Salary : " + EmpSalary;
-        //}
+        // return the string
+        public string GetName()
+        {
+            return "Hello World";
+        }
+        //call another view using actionResult
+        public ActionResult CallingView()
+        {
+            return View("GetEmployee");
+        }
+        //call multiple parameters using URl
+        //https://localhost:44388/default/GetEmployeeusingEmpID/1111?Ename=supriya&EmpSalary=240000&Designation=Engineer
+        public string GetEmployeeusingEmpID(int? EmpId,string Ename, int EmpSalary, string Designation)
+        {
+            return "Employee ID : " + EmpId + " Employee Name : " + Ename + " Employee Salary : " + EmpSalary + "Employee Designation" + Designation;
+        }
+        //https://localhost:44388/default/GetEmployeeDetails/1111?Ename=supriya&EmpSalary=240000&Designation=Engineer
+        public string GetEmployeeDetails(int? EmpId)
+        {
+            return "Employee ID : " + EmpId + " Employee Name : " + Request.QueryString["Ename"] + " Employee Salary : " + Request.QueryString["EmpSalary"] + " Employee Designation : " + Request.QueryString["Designation"];
+        }
+
+
     }
 }
