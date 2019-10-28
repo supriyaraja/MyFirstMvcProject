@@ -95,6 +95,10 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\bird.jpg" />
+    <Content Include="Images\birds1.jpg" />
+    <Content Include="Images\birds2.jpg" />
+    <Content Include="Images\birds3.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -134,6 +138,9 @@
     <Content Include="Views\Shared\_MyPartialView.cshtml" />
     <Content Include="Views\Default\GetEmployee.cshtml" />
     <Content Include="Views\Employee\GetEmployee.cshtml" />
+    <Content Include="Views\Default\GetData.cshtml" />
+    <Content Include="Views\Shared\_MyLayout.cshtml" />
+    <Content Include="Views\Employee\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

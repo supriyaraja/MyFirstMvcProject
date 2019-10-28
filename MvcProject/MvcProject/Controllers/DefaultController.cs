@@ -42,6 +42,10 @@ namespace MvcProject.Controllers
             return "Employee ID : " + EmpId + " Employee Name : " + Request.QueryString["Ename"] + " Employee Salary : " + Request.QueryString["EmpSalary"] + " Employee Designation : " + Request.QueryString["Designation"];
         }
 
+        public ActionResult GetData()
+        {
+            return View();
+        }
 
     }
 }

@@ -38,5 +38,10 @@ namespace MvcProject.Controllers
 
             return View(dbobj);
         }
+
+        public ActionResult Index()
+        {
+            return View();
+        }
     }
 }
