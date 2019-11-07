@@ -1,0 +1,22 @@
+﻿@model  Asp.net_Approach.Models.DeptModel
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+@using (Html.BeginForm())
+{
+    @Html.Hidden("DeptId", Model.DeptId)
+    @Html.Label("DeptCode")
+    @Html.TextBox("DeptCode", Model.DeptCode)
+    <br />
+    @Html.Label("DeptName")
+    @Html.TextBox("DeptName", Model.DeptName)
+    <br />
+    @Html.Label("Location")
+    @Html.TextBox("Location", Model.Location)
+    <br />
+    <br />
+    <input type="submit" value="Edit" class="btn btn-success" />
+}
+

@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asp.net_Approach", "Asp.net
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asp.net WebApi", "Asp.net WebApi\Asp.net WebApi.csproj", "{D32FC42D-AF40-4F47-9019-70180F6A5EFB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ado", "Ado\Ado.csproj", "{DE415529-6EC9-4BC4-B93E-505F40707733}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseFirstApproach", "DatabaseFirstApproach\DatabaseFirstApproach.csproj", "{D0C97BBC-ABB7-4BC1-8C30-BBB0A5604049}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{D32FC42D-AF40-4F47-9019-70180F6A5EFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D32FC42D-AF40-4F47-9019-70180F6A5EFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D32FC42D-AF40-4F47-9019-70180F6A5EFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE415529-6EC9-4BC4-B93E-505F40707733}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE415529-6EC9-4BC4-B93E-505F40707733}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE415529-6EC9-4BC4-B93E-505F40707733}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE415529-6EC9-4BC4-B93E-505F40707733}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0C97BBC-ABB7-4BC1-8C30-BBB0A5604049}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0C97BBC-ABB7-4BC1-8C30-BBB0A5604049}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0C97BBC-ABB7-4BC1-8C30-BBB0A5604049}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0C97BBC-ABB7-4BC1-8C30-BBB0A5604049}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

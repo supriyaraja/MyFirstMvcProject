@@ -17,5 +17,6 @@ namespace Asp.net_WebApi.Models
         public int EmpId { get; set; }
         public string EmpName { get; set; }
         public Nullable<int> EmpSalary { get; set; }
+        public Nullable<int> DeptId { get; set; }
     }
 }

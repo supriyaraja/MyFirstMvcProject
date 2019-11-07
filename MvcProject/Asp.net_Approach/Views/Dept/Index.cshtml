@@ -1,0 +1,25 @@
+﻿@model List<Asp.net_Approach.Models.DeptModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table>
+    <tr>
+        <th>DeptId</th>
+        <th>DeptCode</th>
+        <th>DeptName</th>
+        <th>Location</th>
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@item.DeptId</td>
+            <td>@item.DeptCode</td>
+            <td>@item.DeptName</td>
+            <td>@item.Location</td>
+            <td>@Html.ActionLink("Edit", "Edit", new { id = item.DeptId }) || @Html.ActionLink("Delete","Delete", new {id = item.DeptId })</td>
+        </tr>
+    }
+</table>

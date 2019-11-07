@@ -18,19 +18,28 @@
             <th>
                 EmployeeSalary
             </th>
+            <th>
+                DeptId
+            </th>
         </tr>
     </thead>
 </table>
 <br />
 <br />
 
+<form>
 
-<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    EmpName <input type="text" name="EmpName" id="EmpName" /><br />
+    EmpSalary <input type="text" name="EmpSalary" id="EmpSalary" /><br />
+    Deptid <input type="text" name="EmpDeptId" id="EmpDeptId" /><br />
+    <p id="Save">Click me</p>
 
+</form>
+<script src="~/Scripts/jquery-3.3.1.js"></script>
 <script>
     onload = function showdata() {
         $.ajax({
-            url: "http://localhost:44387/api/EmployeeModels",
+            url: "https://localhost:44387/api/EmployeeModels",
             type: "Get",
             datatype: "json",
             success: function (result) {
@@ -39,11 +48,23 @@
                 $.each(result, function (i, key) {
 
 
-                    $("#table-1 tr:last").after('<tr><td>' + key.Empid + '</td><td>' + key.EmpName + '</td><td>' + key.EmpSalary + '</td></tr>');
+                    $("#table-1 tr:last").after('<tr><td>' + key.EmpId + '</td><td>' + key.EmpName + '</td><td>' + key.EmpSalary + '</td><td>' + key.DeptId + '</td></tr>');
 
                 });
 
             }
         });
     }
+
+
+    $('#Save').click(function () {
+        var url = "https://localhost:44387/api/EmployeeModels";
+        var EmpName = $("#EmpName").val();
+        var EmpSalary = $("#EmpSalary").val();
+        var DeptId = $("#EmpDeptId").val();
+        $.post(url, { EmpName: EmpName, EmpSalary: EmpSalary, DeptId: DeptId }, function (data) {
+            $("#msg").html(data);
+        });
+    })
 </script>
+
