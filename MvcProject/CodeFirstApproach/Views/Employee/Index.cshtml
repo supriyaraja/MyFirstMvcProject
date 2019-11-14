@@ -12,10 +12,15 @@
     </tr>
     @foreach (var item in Model)
     {
-        <tr>
-            <td>@item.EmpId</td>
-            <td>@item.EmpName</td>
-            <td>@item.EmpSalary</td>
-        </tr>
+<tr>
+    <td>@item.EmpId</td>
+    <td>@item.EmpName</td>
+    <td>@item.EmpSalary</td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.EmpId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.EmpId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.EmpId })
+    </td>
+</tr>
     }
 </table>

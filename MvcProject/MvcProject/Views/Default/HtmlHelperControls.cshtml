@@ -1,0 +1,44 @@
+﻿@model MvcProject.Models.Employee
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using MvcProject.CustomHelpers;
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>HtmlHelperControls</title>
+</head>
+<body>
+    <div>
+        @Html.Label("FirstName")
+        @Html.TextBox("FirstName", "Supriya", new { @style = "background-color:red;color:white", @class = "form-control" })<br />
+        @Html.Label("PassWord")
+        @Html.Password("PassWord", "Jack")<br />
+        @Html.Label("Gender")
+        @Html.RadioButton("Gender", "Male")<span>Male</span>
+        @Html.RadioButton("Gender", "FeMale")<span>Female</span><br />
+        @Html.Label("Select Country")
+        @Html.DropDownList("Country", new List<SelectListItem>{
+            new SelectListItem{Text="India", Value="1", Selected=true},
+            new SelectListItem{Text="Us", Value="2"},
+            new SelectListItem{Text="China", Value="3"}
+        }, "Select Country")<br />
+        @Html.DropDownList("Department", "Select Department")<br/><br/>
+        @Html.LabelFor(Model => Model.EmpName)
+        @Html.TextBoxFor(Model => Model.EmpName)<br />
+        @HtmlHelpersExample.MyLabel("I accept the Argeement.")
+        @Html.createUrControl("file")
+        @Html.createUrControl("text")
+        @Html.createUrControl("button")<br/>
+
+        @helper labelbyrazzorcode(string content)
+        {
+            <label>@content</label>
+        }
+        @labelbyrazzorcode("hi this is ali")
+
+    </div>
+</body>
+</html>

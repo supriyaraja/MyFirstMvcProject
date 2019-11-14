@@ -43,7 +43,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -99,8 +107,34 @@
     <Content Include="Images\birds1.jpg" />
     <Content Include="Images\birds2.jpg" />
     <Content Include="Images\birds3.jpg" />
+    <Content Include="Models\DepartmentModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DepartmentModel.edmx</DependentUpon>
+      <LastGenOutput>DepartmentModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\DepartmentModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DepartmentModel.edmx</DependentUpon>
+      <LastGenOutput>DepartmentModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\EmpModel.tt">
+      <DependentUpon>EmpModel.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EmpModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\DepartmentModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DepartmentModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\DepartmentModel.edmx.diagram">
+      <DependentUpon>DepartmentModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\EmpModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EmpModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -113,10 +147,39 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="CustomHelpers\HtmlHelpersExample.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Department.cs">
+      <DependentUpon>EmpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DepartmentModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DepartmentModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DepartmentModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DepartmentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DepartmentModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DepartmentModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\EmpModel.cs">
+      <DependentUpon>EmpModel.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Models\EmpModel.Designer.cs">
+      <DependentUpon>EmpModel.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -141,6 +204,8 @@
     <Content Include="Views\Default\GetData.cshtml" />
     <Content Include="Views\Shared\_MyLayout.cshtml" />
     <Content Include="Views\Employee\Index.cshtml" />
+    <Content Include="Views\Default\HtmlHelperControls.cshtml" />
+    <Content Include="Views\Default\add.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -150,6 +215,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

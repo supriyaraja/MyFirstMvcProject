@@ -9,6 +9,7 @@ namespace MvcProject.Controllers
 {
     public class DefaultController : Controller
     {
+        MvcApplicaionEntities1 db = new MvcApplicaionEntities1();
         // GET: Default
         public ActionResult Index()
         {
@@ -36,14 +37,19 @@ namespace MvcProject.Controllers
         {
             return "Employee ID : " + EmpId + " Employee Name : " + Ename + " Employee Salary : " + EmpSalary + "Employee Designation" + Designation;
         }
-        //https://localhost:44388/default/GetEmployeeDetails/1111?Ename=supriya&EmpSalary=240000&Designation=Engineer
         public string GetEmployeeDetails(int? EmpId)
         {
+            //https://localhost:44388/default/GetEmployeeDetails/1111?Ename=supriya&EmpSalary=240000&Designation=Engineer
             return "Employee ID : " + EmpId + " Employee Name : " + Request.QueryString["Ename"] + " Employee Salary : " + Request.QueryString["EmpSalary"] + " Employee Designation : " + Request.QueryString["Designation"];
         }
 
         public ActionResult GetData()
         {
+            return View();
+        }
+        public ActionResult HtmlHelperControls()
+        {
+            ViewBag.Department = new SelectList(db.Departments, "DeptId", "DeptName");
             return View();
         }
 

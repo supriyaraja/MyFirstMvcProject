@@ -8,7 +8,7 @@ namespace CodeFirstApproach.Models
 {
     public class EmployeeContext : DbContext
     {
-        public EmployeeContext() : base("name = Constr")
+        public EmployeeContext() : base("Constr")
         {
         }
         public DbSet<EmployeeModel> EmployeeModels { get; set; }
